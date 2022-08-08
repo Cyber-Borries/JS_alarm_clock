@@ -1,0 +1,64 @@
+/* imported font family to make it look like a digital clock */
+
+@font-face {
+  font-family: "digital-clock-font";
+  src: url("./font/digital-7.ttf");
+}
+/* universal reset to make styling easier */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 75%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  border-radius: 16px;
+  background-color: black;
+  width: 60%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* used to display current time */
+#clockDisplay {
+  background: gray;
+  height: 50%;
+  width: 75%;
+  border-radius: 16px;
+  color: red;
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "digital-clock-font";
+}
+/* used to make the clockDisplay hidden or not */
+#onSwitch {
+  width: 25px;
+  height: 10px;
+  cursor: pointer;
+  background-color: red;
+  margin-left: 250px;
+}
+/* used ::after to add the text so that the user knows they can switch the clock on or off */
+#onSwitch::after {
+  content: "Click the red button to switch the clock on or off";
+  width: 125px;
+  position: absolute;
+  top: 125px;
+}
+/* created an active class to make the font invisible and toggle class with JS */
+#clockDisplay.active {
+  color: rgba(255, 255, 255, 0);
+}
